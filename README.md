@@ -1,7 +1,7 @@
 # All-the-News-That-s-Fit-to-Scrape
 
 
-Web app that lets users view and leave comments on the latest news of "https://elpais.com/tag/mexico/".
+Web app that lets users view and leave comments on the latest news of "https://www.nytimes.com/section/world".
 
 Main dependecies:
 

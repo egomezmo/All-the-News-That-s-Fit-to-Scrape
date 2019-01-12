@@ -4,13 +4,16 @@ var body = require("body-parser");
 var exphbs = require("express-handlebars");
 var mongoose = require("mongoose");
 var logger = require("morgan");
-var cheerio = require("cheerio");
 var request = require("request");
+
+var cheerio = require("cheerio");     // Parses our HTML and helps us find elements
+var axios = require("axios");         // Makes HTTP request for HTML page
+
 
 // Mongoose
 var Note = require("./models/Note");
 var Article = require("./models/Article");
-var databaseUrl = 'mongodb://localhost/scrap';
+var databaseUrl = 'mongodb://localhost/scraper';
 
 if (process.env.MONGODB_URI) {
 	mongoose.connect(process.env.MONGODB_URI);
@@ -35,7 +38,6 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 // app set-ups
-
 app.use(logger("dev"));
 app.use(express.static("public"));
 app.use(body.urlencoded({extended: false}));
