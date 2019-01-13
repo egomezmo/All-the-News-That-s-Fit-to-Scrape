@@ -33,7 +33,6 @@ db.once("open", function() {
 	console.log("CONNECTION SUCCESSFUL");
 });
 
-
 var app = express();
 var port = process.env.PORT || 3000;
 
@@ -54,7 +53,7 @@ app.listen(port, function() {
 app.get("/", function(req, res) {
 	Article.find({}, null, {sort: {created: -1}}, function(err, data) {
 		if(data.length === 0) {
-			res.render("placeholder", {message: "There's nothing scraped yet. Please click \"Scrape For Newest Articles\" for fresh and delicious news."});
+			res.render("placeholder", {message: "Scrape for New Articles"});
 		}
 		else{
 			res.render("index", {articles: data});

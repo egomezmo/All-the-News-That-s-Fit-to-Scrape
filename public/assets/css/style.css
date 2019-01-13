@@ -28,6 +28,9 @@ img {
 
 #wbutton{
   width: 140px;
+  background-color: #3181d3;
+  border-radius: 10px;
+  color:white;
 }
 
 #titles{
